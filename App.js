@@ -149,24 +149,18 @@ app.get('/details/:id',(req,res)=>{
         res.send(result)
     })
 })
-// more bikes details
-// app.post('/menuitems',(req,res)=>{
-//     if(Array.isArray(req.body.id)){
-//         db.collection('bikes').find({id:{$in:req.body.id}}).toArray((err,result)=>{
-//             if (err) throw err;
-//         res.send(result)
-//         })
-//     }else{
-//         res.send('Invalid Input')
-//     }
-// })
-app.post('/menuItems',(req,res)=>{
-    console.log(req.body)
-    db.colection('bikes').find({id:{$in:req.body}}).toArray((err,result)=>{
-        if(err) throw err;
+more bikes details
+app.post('/menuitems',(req,res)=>{
+    if(Array.isArray(req.body.id)){
+        db.collection('bikes').find({id:{$in:req.body.id}}).toArray((err,result)=>{
+            if (err) throw err;
         res.send(result)
-    })
+        })
+    }else{
+        res.send('Invalid Input')
+    }
 })
+
 
 // list of orders
 app.get('/orders',(req,res)=>{
