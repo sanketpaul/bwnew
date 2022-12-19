@@ -159,7 +159,7 @@ app.post('/menuitems',(req,res)=>{
     }else{
         res.send('Invalid Input')
     }
-})
+}) ()
 
 
 // list of orders
